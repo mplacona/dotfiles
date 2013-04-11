@@ -22,5 +22,15 @@
  Bundle 'gmarik/vundle'
  Bundle "pangloss/vim-javascript"
  Bundle "digitaltoad/vim-jade"
+ Bundle "scrooloose/nerdtree"
+ Bundle 'scrooloose/syntastic'
 
  filetype plugin indent on     " required!
+
+ let g:syntastic_enable_signs=1
+ let g:syntastic_auto_jump=1
+ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+ set statusline+=%#warningmsg#
+ set statusline+=%{SyntasticStatuslineFlag()}
+ set statusline+=%*
