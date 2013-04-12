@@ -34,3 +34,5 @@
  set statusline+=%#warningmsg#
  set statusline+=%{SyntasticStatuslineFlag()}
  set statusline+=%*
+
+ :command NT NERDTree
