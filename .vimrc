@@ -1,6 +1,5 @@
+ set shell=bash            " force shell bash
  set nocompatible          " Be improved
- filetype off              " filetype detection[ON] plugin[ON] indent[ON]
-
  set t_Co=256              " enable 256-color mode.
  set number                " show line numbers
  set laststatus=2          " last window always has a statusline
@@ -16,7 +15,15 @@
  set expandtab             " use spaces instead of tabs
  set smarttab              " use tabs at the start of a line, spaces elsewhere
  set nowrap                " don't wrap text
+ set mouse=a               " enable the mouse
+ set hlsearch              " highlight search terms
+ set incsearch             " show search matches as you type
+ set nobackup              " I manage my backups
+ set noswapfile            " don't let it create swap files
+ set pastetoggle=<F2>      " switch to paste mode
 
+ filetype on 
+ filetype off              " filetype detection[ON] plugin[ON] indent[ON]
  set rtp+=~/.vim/bundle/vundle
  call vundle#rc()
  Bundle 'gmarik/vundle'
@@ -34,5 +41,6 @@
  set statusline+=%#warningmsg#
  set statusline+=%{SyntasticStatuslineFlag()}
  set statusline+=%*
+ syntax on
 
  :command NT NERDTree

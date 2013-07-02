@@ -69,3 +69,5 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
