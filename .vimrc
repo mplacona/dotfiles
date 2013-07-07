@@ -31,12 +31,14 @@
  Bundle "digitaltoad/vim-jade"
  Bundle "scrooloose/nerdtree"
  Bundle 'scrooloose/syntastic'
+ Bundle 'plasticboy/vim-markdown'
 
  filetype plugin indent on     " required!
 
  let g:syntastic_enable_signs=1
  let g:syntastic_auto_jump=1
  let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+ let g:vim_markdown_folding_disabled=1
 
  set statusline+=%#warningmsg#
  set statusline+=%{SyntasticStatuslineFlag()}

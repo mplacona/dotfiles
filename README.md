@@ -1,6 +1,6 @@
 Marcos Placona's dotfiles
 ---
-Currently only vimrc and bashrc files have been added, but that's a pretty good start comared to... Well nothing
+Currently only vimrc and bashrc files have been added, but that's a pretty good start compared to... Well nothing
 
 ## Dependencies
 * [Vundle] (https://github.com/gmarik/vundle)
