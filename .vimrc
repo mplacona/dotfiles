@@ -43,6 +43,7 @@
  set statusline+=%#warningmsg#
  set statusline+=%{SyntasticStatuslineFlag()}
  set statusline+=%*
+ set pastetoggle=<F2>
  syntax on
 
  :command NT NERDTree
