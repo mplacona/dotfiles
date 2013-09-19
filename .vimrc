@@ -21,6 +21,9 @@
  set nobackup              " I manage my backups
  set noswapfile            " don't let it create swap files
  set pastetoggle=<F2>      " switch to paste mode
+ set spell                " turn on spell checking
+ hi clear SpellBad
+ hi SpellBad cterm=underline
 
  filetype on 
  filetype off              " filetype detection[ON] plugin[ON] indent[ON]

@@ -71,3 +71,9 @@ alias ..4="cd ../../../.."
 alias ..5="cd ../../../../.."
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+PATH=$PATH:~/Installs/depot_tools
+PATH=$PATH:/usr/local/mysql/bin
+
+# Build Chromium with ninja (faster than make)
+export GYP_GENERATORS="ninja"
