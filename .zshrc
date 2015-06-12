@@ -49,7 +49,7 @@ plugins=(git brew sublime jsontools vundle autojump)
 
 # User configuration
 
-export PATH="/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3@global/bin:/Users/mplacona/.rvm/rubies/ruby-2.1.3/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/mplacona/Installs/depot_tools:/usr/local/mysql/bin:/usr/local/sbin:/Users/mplacona/Library/Android/sdk/platform-tools:/Applications/gradle-2.2/bin:/usr/local/sbin:/Users/mplacona/.rvm/bin:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin"
+export PATH=$PATH:/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3@global/bin:/Users/mplacona/.rvm/rubies/ruby-2.1.3/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/mplacona/Installs/depot_tools:/usr/local/mysql/bin:/usr/local/sbin:/Users/mplacona/Library/Android/sdk/platform-tools:/Applications/gradle-2.2/bin:/usr/local/sbin:/Users/mplacona/.rvm/bin:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
