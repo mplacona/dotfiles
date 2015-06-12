@@ -75,5 +75,15 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 PATH=$PATH:~/Installs/depot_tools
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/sbin
+
+GRADLE_HOME=/Applications/gradle-2.2;
+export GRADLE_HOME
+export PATH=$PATH:$GRADLE_HOME/bin
+
 # Build Chromium with ninja (faster than make)
 export GYP_GENERATORS="ninja"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH=$PATH:/usr/local/sbin
