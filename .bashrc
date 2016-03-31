@@ -87,3 +87,4 @@ export GYP_GENERATORS="ninja"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH=$PATH:/usr/local/sbin
+source dnvm.sh

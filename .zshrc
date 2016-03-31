@@ -10,6 +10,10 @@ ZSH_THEME="steeef"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
@@ -45,14 +49,15 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew sublime jsontools vundle autojump)
+plugins=(git gitfast brew)
 
 # User configuration
-
-export PATH=$PATH:/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3@global/bin:/Users/mplacona/.rvm/rubies/ruby-2.1.3/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/mplacona/Installs/depot_tools:/usr/local/mysql/bin:/usr/local/sbin:/Users/mplacona/Library/Android/sdk/platform-tools:/Applications/gradle-2.2/bin:/usr/local/sbin:/Users/mplacona/.rvm/bin:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+export PATH=$PATH:/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3/bin:/Users/mplacona/.rvm/gems/ruby-2.1.3@global/bin:/Users/mplacona/.rvm/rubies/ruby-2.1.3/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/mplacona/Installs/depot_tools:/usr/local/mysql/bin:/usr/local/sbin:/Users/mplacona/Library/Android/sdk/platform-tools:/Applications/gradle-2.2/bin:/usr/local/sbin:/Users/mplacona/.rvm/bin:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin:/Users/mplacona/Installs/depot_tools:/Users/mplacona/.rvm/bin
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -78,3 +83,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# ENVIRONMENT VARIABLES
+source ~/.profile
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+eval $(thefuck --alias)
+
+source /usr/local/lib/dnx/bin/dnvm.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
