@@ -29,31 +29,32 @@ set spell                	" turn on spell checking
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
- 
-Bundle 'gmarik/vundle'
-" PLACE ADDONS HERE "
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'Raimondi/delimitMate'
-Bundle 'bash-support.vim'
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
-Bundle 'SuperTab'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'rodjek/vim-puppet'
-Bundle 'honza/vim-snippets'
-Bundle 'vim-coffee-script'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'Indent-Guides' 
-Bundle 'pangloss/vim-javascript'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'plasticboy/vim-markdown'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" PLACE ADDONS HERE "
+Plugin 'bash-support.vim'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'SuperTab'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rodjek/vim-puppet'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-coffee-script'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Indent-Guides' 
+Plugin 'pangloss/vim-javascript'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'plasticboy/vim-markdown'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 filetype plugin indent on     " required!
 
 let g:syntastic_enable_signs=1
