@@ -49,7 +49,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitfast brew)
+plugins=(git gitfast brew zsh-autosuggestions)
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -86,9 +86,10 @@ export PATH=$PATH:/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mpl
 #
 # ENVIRONMENT VARIABLES
 source ~/.profile
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-eval $(thefuck --alias)
+
+#eval $(thefuck --alias)
 
 source /usr/local/lib/dnx/bin/dnvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval $(/usr/libexec/path_helper -s)
