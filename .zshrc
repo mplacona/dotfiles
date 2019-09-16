@@ -89,7 +89,7 @@ source ~/.profile
 
 #eval $(thefuck --alias)
 
-source /usr/local/lib/dnx/bin/dnvm.sh
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 eval $(/usr/libexec/path_helper -s)
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+eval "$(rbenv init -)"

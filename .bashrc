@@ -47,7 +47,7 @@ function parse_git_branch() {
 
 # Only show username/host if not default
 function usernamehost() {
-	if [ $USER != $default_username ]; then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME $WHITEin "; fi
+    if [ $USER != $default_username ]; then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME $WHITEin "; fi
 }
 
 # iTerm Tab and Title Customization and prompt customization
@@ -90,4 +90,10 @@ export GYP_GENERATORS="ninja"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH=$PATH:/usr/local/sbin
-source dnvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

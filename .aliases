@@ -1,0 +1,12 @@
+ # Aliases
+alias prettyjson='python -m json.tool'
+alias adb-list='adb shell pm list packages -3'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias reload='source ~/.zshrc'
+alias placonaup='docker-compose up nginx-proxy placona jekyll'
+alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+alias cat="bat" # colored cat command
+alias p="cd ~/Projects/"
+alias d="cd ~/Downloads/"
