@@ -10,3 +10,4 @@ alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 alias cat="bat" # colored cat command
 alias p="cd ~/Projects/"
 alias d="cd ~/Downloads/"
+alias ls="ls -lSrhat"
