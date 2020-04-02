@@ -24,6 +24,7 @@ set softtabstop=4         	" unify
 set tabstop=4				" tab spacing
 set t_Co=256 				" enable 256-color mode.
 set spell                	" turn on spell checking
+set backspace=indent,eol,start "make backspace work like anything else
 
 " Vundle setup
 set nocompatible
@@ -52,6 +53,7 @@ Plugin 'Indent-Guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,3 +69,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set pastetoggle=<F2>
 syntax on
+
+" Key Maps
+map <C-n> :NERDTreeToggle<CR>
