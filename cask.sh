@@ -41,3 +41,5 @@ brew cask install spectacle
 
 brew cask install xquartz
 brew cask install inkscape
+brew cask install ultimaker-cura
+brew install flux

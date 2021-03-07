@@ -32,7 +32,7 @@ brew install jq
 # *********************************
 # Programming bits
 echo $'installing programming bits'
-brew install dart git heroku heroku-node httpie node postgresql pyenv rbenv sqlite twilio vim htop spectacle java ngrok
+brew install dart git heroku heroku-node httpie node postgresql pyenv rbenv sqlite twilio vim htop spectacle java ngrok httpie
 
 # *********************************
 # Interface bits
