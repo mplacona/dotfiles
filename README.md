@@ -3,17 +3,11 @@ Marcos Placona's dotfiles
 Currently only vimrc and bashrc files have been added, but that's a pretty good start compared to... Well nothing
 
 ## Dependencies
-* [Vundle] (https://github.com/gmarik/vundle)
+* Setup (Vundle)[https://github.com/VundleVim/Vundle.vim]
+    * `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+    * `vim +PluginInstall +qall`
 
 ## Quick start
 - Clone or download this repo into cd ~/dotfiles
 - `chmod +x bootstrap.sh`
 - `./bootstrap.sh`
-
-## Thanks to
-* Paul Irish [Tooling & the Web Development Stack](http://goo.gl/O1Dvk)
-* Michael Smalley [Using Git and Github to manage your dotfiles](http://goo.gl/7iRQ8)
-
-## License
-Copyright (c) 2013 @marcos_placona, Marcos Placona.  
-Licensed under the MIT license.

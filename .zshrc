@@ -86,10 +86,10 @@ export PATH=$PATH:/usr/local/bin:/Users/mplacona/google-cloud-sdk/bin:/Users/mpl
 #
 # ENVIRONMENT VARIABLES
 source ~/.profile
+source ~/.aliases
 
 #eval $(thefuck --alias)
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 eval $(/usr/libexec/path_helper -s)
 export PATH="/usr/local/opt/ruby/bin:$PATH"
-eval "$(rbenv init -)"

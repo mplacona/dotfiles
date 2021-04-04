@@ -11,7 +11,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # *********************************
 # Visual studio code
-brew cask uninstall --force visual-studio-code && brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 if [ -L ~/Library/Application\ Support/Code/user/settings.json ]; then
   echo "found old visual studio code settings. removing..."
@@ -24,22 +24,22 @@ ln -s $DIR/visual-studio-code-settings.json ~/Library/Application\ Support/Code/
 # fira code
 echo "installing fira code"
 brew tap caskroom/fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code
 
 # *********************************
 # a better `cat`
 brew install bat
 
-brew cask install docker
-brew cask install firefox
-brew cask install iterm2
-brew cask install alfred
-brew cask install zoomus
-brew cask install spotify
-brew cask install ngrok
-brew cask install spectacle
+brew install --cask docker
+brew install --cask firefox
+brew install --cask iterm2
+brew install --cask alfred
+brew install --cask zoomus
+brew install --cask spotify
+brew install --cask ngrok
+brew install --cask spectacle
 
-brew cask install xquartz
-brew cask install inkscape
-brew cask install ultimaker-cura
+brew install --cask xquartz
+brew install --cask inkscape
+brew install --cask ultimaker-cura
 brew install flux
