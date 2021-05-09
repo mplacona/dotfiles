@@ -42,4 +42,4 @@ brew install --cask spectacle
 brew install --cask xquartz
 brew install --cask inkscape
 brew install --cask ultimaker-cura
-brew install flux
+brew install --cask angry-ip-scanner

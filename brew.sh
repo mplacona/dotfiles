@@ -32,9 +32,14 @@ brew install jq
 # *********************************
 # Programming bits
 echo $'installing programming bits'
-brew install dart git heroku heroku-node httpie node postgresql pyenv rbenv sqlite twilio vim htop spectacle java ngrok httpie
+brew install dart git heroku heroku-node httpie node postgresql pyenv rbenv sqlite twilio vim htop spectacle java ngrok httpie pyenv
 
 # *********************************
 # Interface bits
 echo $'installing interface bits'
 brew install alfred inkscape
+
+echo $'installing java bits'
+brew install jenv
+brew install java
+brew install AdoptOpenJDK/openjdk/adoptopenjdk{11,14}
