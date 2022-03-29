@@ -10,6 +10,7 @@ alias p="cd ~/Projects/"
 alias d="cd ~/Downloads/"
 alias ls="ls -lSrhat"
 alias ip="echo Your ip is; dig +short myip.opendns.com @resolver1.opendns.com;"
+alias du="du -sh * | sort -h"
 
 # directory short cuts
 alias p='cd ~/Projects/'
