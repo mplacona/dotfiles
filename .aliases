@@ -31,13 +31,8 @@ function devrel() {
 
 # MentionDrop tmux session
 function mentiondrop() {
-  cd "$HOME/Projects/JavaScript/mentiondrop"
   printf '\e]0;🟣 MentionDrop\a'
-  tmux attach -t mentiondrop 2>/dev/null || \
-  tmux new-session -d -s mentiondrop \; \
-    set-option -t mentiondrop status-style bg=magenta,fg=black \; \
-    rename-window "🟣 MentionDrop"
-  tmux attach -t mentiondrop
+  mosh mplacona@100.102.111.19 -- tmux new -As mentiondrop
 }
 
 # VPS tmux session + SSH
@@ -61,3 +56,4 @@ function hermes() {
   printf '\e]0;⚫ Hermes\a'
   mosh mplacona@100.102.111.19 -- tmux new -As hermes
 }
+
