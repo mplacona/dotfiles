@@ -6,7 +6,7 @@ set cursorline          " highlight current line
 set expandtab             	" use spaces instead of tabs
 set ignorecase            	" Make searches case-insensitive.
 set incsearch             	" But do highlight as you type your search.
-set laststatus=2          	" last window always has a statusline
+"set laststatus=2          	" last window always has a statusline
 set mouse=a               	" enable the mouse
 set nobackup              	" I manage my backups
 set hlsearch            	" highlight searched phrases.

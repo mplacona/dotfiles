@@ -1,1 +1,3 @@
 .vim/bundle
+.zshrc.local
+.bashrc.local

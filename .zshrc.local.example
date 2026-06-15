@@ -1,0 +1,12 @@
+# Copy this to ~/.zshrc.local and fill in machine-specific values.
+# This file is NOT committed to dotfiles.
+
+# Example: a project-specific PATH addition
+# export PATH="$PATH:$HOME/Projects/someproject/bin"
+
+# Example: AWS profile
+# export AWS_DEFAULT_PROFILE=myprofile
+# export AWS_PROFILE=myprofile
+
+# Example: API keys or tokens
+# export MY_API_KEY="..."
