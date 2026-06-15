@@ -1,5 +1,5 @@
  # Aliases
-alias prettyjson='python -m json.tool'
+
 alias adb-list='adb shell pm list packages -3'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias speedtest='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
@@ -11,7 +11,55 @@ alias d="cd ~/Downloads/"
 alias ls="ls -lSrhat"
 alias ip="echo Your ip is; dig +short myip.opendns.com @resolver1.opendns.com;"
 alias du="du -sh * | sort -h"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # directory short cuts
 alias p='cd ~/Projects/'
 alias d='cd ~/Downloads/'
+alias o='cd "/Users/mplacona/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault"'
+#alias devrel='cd /Users/mplacona/Projects/DevRelWork'
+
+# DevRel
+function devrel() {
+  cd "/Users/mplacona/Projects/DevRelWork"
+
+  printf '\e]0;🔵 DevRel\a'
+
+  tmux attach -t devrel 2>/dev/null || \
+  tmux new-session -d -s devrel \; \
+    set-option -t devrel status-style bg=blue,fg=black \; \
+    rename-window "🔵 DevRel"
+
+  tmux attach -t devrel
+}
+
+# MentionDrop
+function mentiondrop() {
+  cd "/Users/mplacona/Projects/JavaScript/mentiondrop"
+
+  printf '\e]0;🟣 MentionDrop\a'
+
+  tmux attach -t mentiondrop 2>/dev/null || \
+  tmux new-session -d -s mentiondrop \; \
+    set-option -t mentiondrop status-style bg=magenta,fg=black \; \
+    rename-window "🟣 MentionDrop"
+
+  tmux attach -t mentiondrop
+}
+
+# VPS
+function vps() {
+  printf '\e]0;🔴 VPS\a'
+
+  tmux attach -t vps 2>/dev/null || \
+  tmux new-session -d -s vps \; \
+    set-option -t vps status-style bg=red,fg=white \; \
+    rename-window "🔴 VPS"
+
+  tmux attach -t vps
+
+  ssh mplacona@100.102.111.19
+}
+
+alias clientwork='mosh mplacona@100.102.111.19 -- tmux new -As clientwork'
+alias hermes='mosh mplacona@100.102.111.19 -- tmux new -As hermes'
