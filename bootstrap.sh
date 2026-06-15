@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .vimrc .vim .zshrc .aliases .p10k.zsh"    	  # list of files/folders to symlink in homedir
+files=".vimrc .vim .zshrc .aliases .p10k.zsh"    	  # list of files/folders to symlink in homedir
 
 ##########
 
@@ -33,4 +33,4 @@ done
 # Install ZSH deps
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-source ~/.bashrc
+source ~/.zshrc
