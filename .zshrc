@@ -18,28 +18,50 @@ plugins=(git gitfast brew zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Core PATH - use $HOME everywhere so this works on any machine
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:$HOME/.local/bin
-
+# Secrets and ~/.local/bin (via ~/.local/bin/env). Homebrew and system paths
+# are set up in ~/.zprofile and /etc/zprofile.
 source ~/.profile
 source ~/.aliases
 
-eval $(/usr/libexec/path_helper -s)
-export PATH="/opt/homebrew/bin:$PATH"
+# ----------------------------------------------------------------------------
+# PATH: each block prepends, so the last one added wins.
+# ----------------------------------------------------------------------------
 
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# nvm, lazy loaded: the default node is on PATH straight away, and nvm.sh is
+# only sourced the first time `nvm` itself is run. Node always comes from nvm.
+# If the default alias can't be resolved to an installed version (e.g. lts/*),
+# fall back to loading nvm eagerly.
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+_nvm_load() {
+  unset -f nvm _nvm_load
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { _nvm_load; nvm "$@"; }
+_nvm_bin=""
+if [[ -r "$NVM_DIR/alias/default" ]]; then
+  _nvm_default="$(<"$NVM_DIR/alias/default")"
+  _nvm_default="v${_nvm_default#v}"
+  # Exact match (v24.22.0), else the newest installed match for a prefix (24 or v24.22)
+  _nvm_bin=( "$NVM_DIR"/versions/node/${_nvm_default}(/N) "$NVM_DIR"/versions/node/${_nvm_default}.*(/NnOn) )
+  _nvm_bin="${_nvm_bin[1]:+${_nvm_bin[1]}/bin}"
+  unset _nvm_default
+fi
+if [[ -n "$_nvm_bin" ]]; then
+  export PATH="$_nvm_bin:$PATH"
+else
+  _nvm_load
+fi
+unset _nvm_bin
 
+# openssl
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 # pnpm
@@ -54,11 +76,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
-
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+# ----------------------------------------------------------------------------
+# Prompt and extras
+# ----------------------------------------------------------------------------
 
 # Powerlevel10k
 if [[ -n "$CURSOR_AGENT" ]]; then
@@ -72,3 +92,6 @@ fi
 
 # Machine-specific config (git-ignored)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Drop any duplicate PATH entries, keeping the first occurrence.
+typeset -U path PATH
