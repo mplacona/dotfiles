@@ -10,14 +10,11 @@ cask "angry-ip-scanner"
 cask "appcleaner"
 cask "audacity"
 cask "balenaetcher"
-cask "camtasia"
 cask "chromedriver"
-cask "claude-usage-tracker"
 cask "codexbar"
 cask "coteditor"
 cask "dbeaver-community"
 cask "discord"
-cask "docker-desktop"
 cask "elgato-control-center"
 cask "firefox"
 cask "font-fira-code"
@@ -26,19 +23,15 @@ cask "gimp"
 cask "iina"
 cask "imageoptim"
 cask "inkscape"
-cask "iterm2"
 cask "jollysfastvnc"
-cask "jordanbaird-ice"
 cask "karabiner-elements"
 cask "mqttx"
 cask "ngrok"
 cask "notion"
 cask "notunes"
 cask "obsidian"
-cask "openoffice"
 cask "openscad"
 cask "prusaslicer"
-cask "rambox"
 cask "screen-studio"
 cask "sdformatter"
 cask "shotcut"
@@ -66,16 +59,12 @@ mas "DuckDuckGo", id: 663592361
 mas "Hand Mirror", id: 1502839586
 mas "Keynote", id: 409183694
 mas "NordVPN", id: 905953485
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "PDFgear", id: 6469021132
 mas "Seashore", id: 1448648921
 mas "ServerCat", id: 1501532023
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
-mas "Vercel Deploy Status", id: 6755970752
 mas "Windows App", id: 1295203466
-mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
 
 # Laptop-only command-line tools
