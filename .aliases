@@ -39,7 +39,8 @@ function _is_this_host() {
   { ifconfig 2>/dev/null; ip -4 -o addr show 2>/dev/null; } | grep -qE "inet $1( |/)"
 }
 
-# Open one of the agent sessions.  From another machine we mosh into the host;
+# Open one of the agent sessions.  From another machine we ssh into the host,
+# reconnecting automatically if the connection drops;
 # on the host itself we run the real binary in a local tmux session — these
 # functions share a name with the executables in ~/.local/bin and would
 # otherwise shadow them.
@@ -50,7 +51,12 @@ function _agent_session() {
   printf '\e]0;%s\a' "$title"
 
   if ! _is_this_host "$ip"; then
-    mosh "mplacona@$ip" -- tmux new -As "$session"
+    while true; do
+      TERM=xterm-256color ssh -t -o ServerAliveInterval=5 -o ServerAliveCountMax=2 -o ConnectTimeout=5 \
+        "mplacona@$ip" tmux new -As "$session"
+      [[ $? -eq 255 ]] || break   # 255 = connection dropped; anything else = you detached or quit
+      echo "Connection lost, reconnecting…"; sleep 2
+    done
     return
   fi
 
@@ -93,3 +99,8 @@ function hermes() {
   _agent_session 100.68.121.13 hermes '⚫ Hermes' hermes "$@"
 }
 
+
+# CD into Obsidian file's directory from clipboard path
+obslink() {
+  cd "$(dirname "$(pbpaste)")"
+}
