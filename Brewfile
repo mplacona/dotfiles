@@ -35,8 +35,8 @@ brew "ffmpeg"
 brew "age"
 brew "mkcert"
 brew "direnv"
-brew "supabase/tap/supabase"
-brew "infisical/get-cli/infisical"
+brew "supabase/tap/supabase", trusted: true
+brew "infisical/get-cli/infisical", trusted: true
 
 # Apple platforms
 brew "asc"
