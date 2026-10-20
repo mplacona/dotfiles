@@ -1,3 +1,4 @@
 .vim/bundle
 .zshrc.local
 .bashrc.local
+.DS_Store

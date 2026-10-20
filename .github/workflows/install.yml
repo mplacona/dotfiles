@@ -1,0 +1,40 @@
+name: install
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  install:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint
+        run: |
+          brew install shellcheck
+          shellcheck install.sh macos.sh bin/remote-tmux config/cmux/bootstrap-workspaces.sh porg/install.sh
+          zsh -n .zshrc .zprofile .aliases
+
+      - name: Brewfiles parse
+        run: |
+          brew bundle list --all --file=Brewfile >/dev/null
+          brew bundle list --all --file=Brewfile.apps >/dev/null
+
+      - name: First run sets everything up
+        run: |
+          cp -R "$GITHUB_WORKSPACE" ~/dotfiles
+          ~/dotfiles/install.sh --no-brew
+
+      - name: Second run changes nothing
+        run: |
+          ~/dotfiles/install.sh --no-brew | tee second-run.txt
+          grep -q 'Everything already in place' second-run.txt
+          ~/dotfiles/install.sh --no-brew --check
+
+      - name: A new shell starts without errors
+        run: |
+          zsh -i -c exit 2> zsh-errors.txt
+          cat zsh-errors.txt
+          [ ! -s zsh-errors.txt ]

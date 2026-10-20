@@ -1,0 +1,14 @@
+[user]
+	name = Marcos Placona
+	email = 221627+mplacona@users.noreply.github.com
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+# Machine-specific settings (git-ignored), e.g. aliases that only exist on one Mac
+[include]
+	path = ~/.gitconfig.local
