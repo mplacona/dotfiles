@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Secrets and ~/.local/bin (via ~/.local/bin/env). Homebrew and system paths
 # are set up in ~/.zprofile and /etc/zprofile.
-source ~/.profile
+[[ -f ~/.profile ]] && source ~/.profile
 source ~/.aliases
 
 # ----------------------------------------------------------------------------

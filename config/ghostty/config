@@ -1,0 +1,5 @@
+# Ghostty (and cmux, which reads the same file). Options: https://ghostty.org/docs/config
+
+# Every machine I ssh into knows xterm-256color; not all of them know xterm-ghostty.
+term = xterm-256color
+working-directory = inherit
